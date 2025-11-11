@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central Notícias</title>
+    <title>Rutinário</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Favicon -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2910/2910763.png" type="image/png">
-    <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
+
     <style>
-        /* Efeito 3D nos cards */
         .card-3d {
             perspective: 1000px;
         }
@@ -23,7 +21,6 @@
             transform: rotateY(10deg) rotateX(10deg) scale(1.05);
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-        /* Brilho */
         .card-3d:hover::before {
             opacity: 0.2;
         }
@@ -37,54 +34,126 @@
             transition: opacity 0.4s;
             pointer-events: none;
         }
+        @media (max-width: 768px) {
+            .card-3d:hover .card-inner {
+                transform: none;
+                box-shadow: none;
+            }
+        }
     </style>
 </head>
+
 <body class="bg-gray-100 flex flex-col min-h-screen">
 
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-gray-600 to-indigo-600 text-white p-6 shadow-lg">
-        <h1 class="text-4xl font-extrabold text-center">Central Notícias</h1>
-    </header>
+<header class="bg-gradient-to-r from-gray-600 to-indigo-600 text-white p-6 shadow-lg flex justify-between items-center">
+    <h1 class="text-4xl font-extrabold">Rutinário</h1>
+    <div id="clock" class="text-xl font-semibold"></div>
+</header>
 
-    <!-- Main Content -->
-    <main class="flex-grow flex flex-col items-center justify-center gap-8 mt-12 px-4 md:flex-row md:justify-center md:flex-wrap">
+<main class="flex-grow flex flex-col items-center justify-center gap-8 mt-12 px-4 md:flex-row md:justify-center md:flex-wrap">
 
-        <!-- Card 1 -->
-        <a href="https://andrepe-ux.github.io/sindibusca/" 
-           class="card-3d relative w-64 h-48 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl shadow-lg overflow-hidden cursor-pointer">
-            <div class="card-inner flex flex-col items-center justify-center h-full text-white">
-                <i data-feather="users" class="w-12 h-12 mb-4"></i>
-                <h2 class="text-xl font-bold text-center">Notícias Sindicatos</h2>
-            </div>
-        </a>
+    <!-- Card 1 -->
+    <a href="https://andrepe-ux.github.io/sindibusca/" target="_blank" rel="noopener noreferrer"
+       class="card-3d relative w-64 h-48 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl shadow-lg overflow-hidden cursor-pointer">
+        <div class="card-inner flex flex-col items-center justify-center h-full text-white">
+            <i data-feather="users" class="w-12 h-12 mb-4"></i>
+            <h2 class="text-xl font-bold text-center">Notícias Sindicatos</h2>
+        </div>
+    </a>
 
-        <!-- Card 2 -->
-        <a href="https://andrepe-ux.github.io/noticiasfiscal/" 
-           class="card-3d relative w-64 h-48 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl shadow-lg overflow-hidden cursor-pointer">
-            <div class="card-inner flex flex-col items-center justify-center h-full text-white">
-                <i data-feather="bar-chart-2" class="w-12 h-12 mb-4"></i>
-                <h2 class="text-xl font-bold text-center">Notícias Fiscal</h2>
-            </div>
-        </a>
+    <!-- Card 2 -->
+    <a href="https://andrepe-ux.github.io/noticiasfiscal/" target="_blank" rel="noopener noreferrer"
+       class="card-3d relative w-64 h-48 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl shadow-lg overflow-hidden cursor-pointer">
+        <div class="card-inner flex flex-col items-center justify-center h-full text-white">
+            <i data-feather="bar-chart-2" class="w-12 h-12 mb-4"></i>
+            <h2 class="text-xl font-bold text-center">Notícias Fiscal</h2>
+        </div>
+    </a>
 
-        <!-- Card 3 -->
-        <a href="https://andrepe-ux.github.io/noticias/" 
-           class="card-3d relative w-64 h-48 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl shadow-lg overflow-hidden cursor-pointer">
-            <div class="card-inner flex flex-col items-center justify-center h-full text-white">
-                <i data-feather="briefcase" class="w-12 h-12 mb-4"></i>
-                <h2 class="text-xl font-bold text-center">Notícias Laborais</h2>
-            </div>
-        </a>
+    <!-- Card 3 -->
+    <a href="https://andrepe-ux.github.io/noticias/" target="_blank" rel="noopener noreferrer"
+       class="card-3d relative w-64 h-48 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl shadow-lg overflow-hidden cursor-pointer">
+        <div class="card-inner flex flex-col items-center justify-center h-full text-white">
+            <i data-feather="briefcase" class="w-12 h-12 mb-4"></i>
+            <h2 class="text-xl font-bold text-center">Notícias Laborais</h2>
+        </div>
+    </a>
 
-    </main>
+    <!-- Card 4 -->
+    <a href="https://andrepe-ux.github.io/jubilados/" target="_blank" rel="noopener noreferrer"
+       class="card-3d relative w-64 h-48 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl shadow-lg overflow-hidden cursor-pointer">
+        <div class="card-inner flex flex-col items-center justify-center h-full text-white">
+            <i data-feather="smile" class="w-12 h-12 mb-4"></i>
+            <h2 class="text-xl font-bold text-center">Calcular ESP-Jubilados</h2>
+        </div>
+    </a>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center p-2 mt-auto">
-        andrepe © 2025
-    </footer>
+    <!-- Card 5 -->
+    <a href="https://andrepe-ux.github.io/calcula_data/" target="_blank" rel="noopener noreferrer"
+       class="card-3d relative w-64 h-48 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl shadow-lg overflow-hidden cursor-pointer">
+        <div class="card-inner flex flex-col items-center justify-center h-full text-white">
+            <i data-feather="calendar" class="w-12 h-12 mb-4"></i>
+            <h2 class="text-xl font-bold text-center">Calcular Datas</h2>
+        </div>
+    </a>
 
-    <script>
-        feather.replace()
-    </script>
+    <!-- Card 6 -->
+    <a href="https://andrepe-ux.github.io/menupdf/" target="_blank" rel="noopener noreferrer"
+       class="card-3d relative w-64 h-48 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl shadow-lg overflow-hidden cursor-pointer">
+        <div class="card-inner flex flex-col items-center justify-center h-full text-white">
+            <i data-feather="file" class="w-12 h-12 mb-4"></i>
+            <h2 class="text-xl font-bold text-center">Menu PDF</h2>
+        </div>
+    </a>
+
+    <!-- Card 7 -->
+    <a href="https://andrepe-ux.github.io/incidencias/" target="_blank" rel="noopener noreferrer"
+       class="card-3d relative w-64 h-48 bg-gradient-to-br from-gray-400 to-gray-600 rounded-2xl shadow-lg overflow-hidden cursor-pointer">
+        <div class="card-inner flex flex-col items-center justify-center h-full text-white">
+            <i data-feather="search" class="w-12 h-12 mb-4"></i>
+            <h2 class="text-xl font-bold text-center">Incidencias</h2>
+        </div>
+    </a>
+
+    <!-- Card 8 -->
+    <a href="https://andrepe-ux.github.io/indicadores/" target="_blank" rel="noopener noreferrer"
+       class="card-3d relative w-64 h-48 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-2xl shadow-lg overflow-hidden cursor-pointer">
+        <div class="card-inner flex flex-col items-center justify-center h-full text-white">
+            <i data-feather="activity" class="w-12 h-12 mb-4"></i>
+            <h2 class="text-xl font-bold text-center">Indicadores SS</h2>
+        </div>
+    </a>
+
+    <!-- Card 9 (NOVO) -->
+    <a href="https://andrepe-ux.github.io/llamamiento/" target="_blank" rel="noopener noreferrer"
+       class="card-3d relative w-64 h-48 bg-gradient-to-br from-teal-400 to-teal-600 rounded-2xl shadow-lg overflow-hidden cursor-pointer">
+        <div class="card-inner flex flex-col items-center justify-center h-full text-white">
+            <i data-feather="phone" class="w-12 h-12 mb-4"></i>
+            <h2 class="text-xl font-bold text-center">LLamamiento FD</h2>
+        </div>
+    </a>
+
+</main>
+
+<footer class="bg-gray-800 text-white text-center p-1 mt-auto">
+    andrepe © 2025
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        feather.replace();
+        updateClock();
+        setInterval(updateClock, 1000);
+    });
+
+    function updateClock() {
+        const now = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const time = now.toLocaleTimeString('pt-BR');
+        const date = now.toLocaleDateString('pt-BR', options);
+        document.getElementById('clock').textContent = `${date} ${time}`;
+    }
+</script>
+
 </body>
 </html>
